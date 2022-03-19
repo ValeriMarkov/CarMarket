@@ -1,0 +1,49 @@
+﻿@model Office
+
+<form asp-controller="Home" asp-action="EditOffice">
+    <input asp-for="Id" hidden />
+
+    <label asp-for="PictureURL"></label>
+    <input class="form-control" asp-for="PictureURL" />
+
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+
+    <label asp-for="Location"></label>
+    <input class="form-control" asp-for="Location" />
+
+    <label asp-for="Manager"></label>
+    <input class="form-control" asp-for="Manager" />
+
+    <label asp-for="Number"></label>
+    <input class="form-control" asp-for="Number" />
+
+    <br />
+    <button class="btn btn-primary">Edit office</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Delete office</button>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Do you confirm deletion of office?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button onclick="deleteOffice()" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const deleteOffice = () => {
+        window.location = `/Home/DeleteOffice/${@Model.Id}`
+    }
+</script>

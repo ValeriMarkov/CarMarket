@@ -1,0 +1,61 @@
+﻿@model Car
+
+<form asp-controller="Home" asp-action="EditCar">
+    <input asp-for="Id" hidden />
+
+    <label asp-for="Picture"></label>
+    <input class="form-control" asp-for="Picture" />
+
+    <label asp-for="Brand"></label>
+    <input class="form-control" asp-for="Brand" />
+
+    <label asp-for="Model"></label>
+    <input class="form-control" asp-for="Model" />
+
+    <label asp-for="Engine"></label>
+    <input class="form-control" asp-for="Engine" />
+
+    <label asp-for="HorsePower"></label>
+    <input class="form-control" asp-for="HorsePower" />
+
+    <label asp-for="ManufactureDate"></label>
+    <input class="form-control" asp-for="ManufactureDate" />
+
+    <label asp-for="TotalMileage"></label>
+    <input class="form-control" asp-for="TotalMileage" />
+
+    <label asp-for="Features"></label>
+    <input class="form-control" asp-for="Features" />
+
+    <label asp-for="SalePrice"></label>
+    <input class="form-control" asp-for="SalePrice" />
+
+    <br />
+    <button class="btn btn-primary">Edit car</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Delete car</button>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Do you confirm deletion of car?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button onclick="deleteCar()" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const deleteCar = () => {
+        window.location = `/Home/DeleteCar/${@Model.Id}`
+    }
+</script>

@@ -1,0 +1,26 @@
+﻿@model Office
+
+<div>
+    <p>Enter the necessary requests to add an office to the list.</p>
+</div>
+
+<form asp-controller="Office" asp-action="SaveOffice">
+
+    <label asp-for="PictureURL"></label>
+    <input class="form-control" asp-for="PictureURL" />
+
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+
+    <label asp-for="Location"></label>
+    <input class="form-control" asp-for="Location" />
+
+    <label asp-for="Manager"></label>
+    <input class="form-control" asp-for="Manager" />
+
+    <label asp-for="Number"></label>
+    <input class="form-control" asp-for="Number" />
+
+    <br />
+    <button class="btn btn-primary">Add office</button>
+</form>

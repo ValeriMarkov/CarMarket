@@ -1,8 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CarMarket.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarMarket.Data
 {
@@ -10,7 +7,9 @@ namespace CarMarket.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
+
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Office> Offices { get; set; }
     }
 }

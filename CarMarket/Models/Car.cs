@@ -1,10 +1,7 @@
 ﻿using CarMarket.Data;
 using CarMarket.Data.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarMarket.Models
 {
@@ -12,17 +9,24 @@ namespace CarMarket.Models
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Picture URL")]
         public string Picture { get; set; }
+        [Display(Name = "Brand")]
         public Brand Brand { get; set; }
+        [Display(Name = "Model")]
         public string Model { get; set; }
+        [Display(Name = "Engine")]
         public double Engine { get; set; }
+        [Display(Name = "Horse Power")]
         public int HorsePower { get; set; }
+        [Display(Name = "Manufacture Date")]
         [DataType(DataType.Date)]
         public DateTime? ManufactureDate { get; set; }
+        [Display(Name = "Total Mileage")]
         public int TotalMileage { get; set; }
-        public string Description { get; set; }
+        [Display(Name = "Sale Price")]
         public double SalePrice { get; set; }
-
-        public List<Features> Features { get; set; }
+        [Display(Name = "Features")]
+        public Features Features { get; set; }
     }
 }

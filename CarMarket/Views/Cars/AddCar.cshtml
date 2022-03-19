@@ -1,0 +1,38 @@
+﻿@model Car
+
+<div>
+    <p>Enter the necessary requests to add the car to the sales list.</p>
+</div>
+
+<form asp-controller="Cars" asp-action="SaveCar">
+
+    <label asp-for="Picture"></label>
+    <input class="form-control" asp-for="Picture" />
+
+    <label asp-for="Brand"></label>
+    <input class="form-control" asp-for="Brand" />
+
+    <label asp-for="Model"></label>
+    <input class="form-control" asp-for="Model" />
+
+    <label asp-for="Engine"></label>
+    <input class="form-control" asp-for="Engine" />
+
+    <label asp-for="HorsePower"></label>
+    <input class="form-control" asp-for="HorsePower" />
+
+    <label asp-for="ManufactureDate"></label>
+    <input class="form-control" asp-for="ManufactureDate" />
+
+    <label asp-for="TotalMileage"></label>
+    <input class="form-control" asp-for="TotalMileage" />
+
+    <label asp-for="Features"></label>
+    <input class="form-control" asp-for="Features" />
+
+    <label asp-for="SalePrice"></label>
+    <input class="form-control" asp-for="SalePrice" />
+
+    <br />
+    <button class="btn btn-primary">Add car</button>
+</form>

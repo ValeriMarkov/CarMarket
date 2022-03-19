@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace CarDealership.Models
+namespace CarMarket.Models
 {
     public class Office
     {
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Picture Url")]
         public string PictureURL { get; set; }
+        [Display(Name = "Name")]
         public string Name { get; set; }
+        [Display(Name = "Location")]
         public string Location { get; set; }
+        [Display(Name = "Manager")]
+        public string Manager { get; set; }
+        [Display(Name = "Number")]
+        public int Number { get; set; }
     }
 }
