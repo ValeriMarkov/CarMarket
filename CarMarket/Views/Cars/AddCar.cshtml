@@ -1,8 +1,11 @@
 ﻿@model Car
 
-<div>
-    <p>Enter the necessary requests to add the car to the sales list.</p>
-</div>
+@{
+    ViewData["Title"] = "Add a new car";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
 
 <form asp-controller="Cars" asp-action="SaveCar">
 
@@ -36,3 +39,6 @@
     <br />
     <button class="btn btn-primary">Add car</button>
 </form>
+
+</div>
+</div>

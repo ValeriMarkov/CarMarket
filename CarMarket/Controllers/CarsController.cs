@@ -43,6 +43,13 @@ namespace CarMarket.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Details(int id)
+        {
+            var carDetails = this.GetCar(id);
+            if (carDetails == null) return View("Empty");
+                return View("Details");
+        }
+
         [HttpPost]
         public IActionResult SaveCar(Car car)
         {

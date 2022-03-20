@@ -16,7 +16,7 @@
                                     <h5 class="card-title">
                                         @car.Brand
                                         @car.Model
-                                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@car.Id"><i class="bi bi-pencil-square"></i></a>
+                                        <a class="text-white float-right" onclick="editCar('@car.Id')"><i class="bi bi-pencil-square"></i></a>
                                     </h5>
                                 </p>
                             </div>
@@ -29,7 +29,7 @@
                                 <p class="card-text"><b>Model: </b>@car.Model</p>
                                 <p class="card-text"><b>Engine: </b>@car.Engine</p>
                                 <p class="card-text"><b>Manufacture Date: </b>@car.ManufactureDate</p>
-                                <p class="card-text"><b>Sale Price: </b>@car.SalePrice</p>
+                                <p class="card-text"><b>Total mileage: </b>@car.TotalMileage</p>
                                 <p class="card-text ">
                                     <b>Status: </b>
                                     <span class="badge bg-success text-white">AVAILABLE</span>
@@ -56,3 +56,9 @@
     </div>
 
     @await Html.PartialAsync("_CreateItem", "Cars")
+
+<script>
+    const editCar = (id) => {
+        window.location = `/Home/EditCar/${id}`
+    }
+</script>
