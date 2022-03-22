@@ -1,6 +1,10 @@
 ﻿@model Car
 
-<form asp-controller="Home" asp-action="EditCar">
+@{
+    ViewData["Title"] = "Edit car";
+}
+
+<form asp-controller="Cars" asp-action="EditCar">
     <input asp-for="Id" hidden />
 
     <label asp-for="Picture"></label>
@@ -56,6 +60,6 @@
 
 <script>
     const deleteCar = () => {
-        window.location = `/Home/DeleteCar/${@Model.Id}`
+        window.location = `/Cars/DeleteCar/${@Model.Id}`
     }
 </script>

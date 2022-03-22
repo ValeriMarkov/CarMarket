@@ -31,9 +31,9 @@ namespace CarMarket.Controllers
             return View();
         }
 
-        public IActionResult EditOffice(Office office)
+        public IActionResult EditOffice(Office officeToEdit)
         {
-            this.officeService.EditOffice(office);
+            this.officeService.EditOffice(officeToEdit);
             return RedirectToAction("Index");
         }
 

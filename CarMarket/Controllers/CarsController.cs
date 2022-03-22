@@ -31,9 +31,17 @@ namespace CarMarket.Controllers
             return View();
         }
 
-        public IActionResult EditCar(Car car)
+        [HttpPost]
+        public IActionResult SaveCar(Car car)
         {
-            this.carService.EditCar(car);
+            this.carService.AddCar(car);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult EditCar(Car carToEdit)
+        {
+            this.carService.EditCar(carToEdit);
             return RedirectToAction("Index");
         }
 
@@ -50,11 +58,5 @@ namespace CarMarket.Controllers
                 return View("Details");
         }
 
-        [HttpPost]
-        public IActionResult SaveCar(Car car)
-        {
-            this.carService.AddCar(car);
-            return RedirectToAction("Index");
-        }
     }
 }

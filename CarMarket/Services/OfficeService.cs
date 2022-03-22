@@ -7,7 +7,6 @@ namespace CarMarket.Services
 {
     public class OfficeService : IOfficeService
     {
-
         private readonly AppDbContext db;
 
         public OfficeService(AppDbContext db)
@@ -33,7 +32,6 @@ namespace CarMarket.Services
             editedOffice.PictureURL = officeToEdit.PictureURL;
             editedOffice.Name = officeToEdit.Name;
             editedOffice.Location = officeToEdit.Location;
-
         }
 
         public void DeleteOffice(int id)
@@ -47,5 +45,6 @@ namespace CarMarket.Services
         {
             return db.Offices.ToList();
         }
+
     }
 }

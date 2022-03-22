@@ -21,6 +21,7 @@ namespace CarMarket.Models
         public int HorsePower { get; set; }
         [Display(Name = "Manufacture Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? ManufactureDate { get; set; }
         [Display(Name = "Total Mileage")]
         public int TotalMileage { get; set; }
