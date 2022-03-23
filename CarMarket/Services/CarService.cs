@@ -38,6 +38,8 @@ namespace CarMarket.Services
             editedCar.TotalMileage = carToEdit.TotalMileage;
             editedCar.Features = carToEdit.Features;
             editedCar.SalePrice = carToEdit.SalePrice;
+
+            db.SaveChanges();
         }
 
         public void DeleteCar(int id)

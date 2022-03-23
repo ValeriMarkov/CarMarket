@@ -1,11 +1,10 @@
 ﻿@model Office
 
 <div>
-    <p>Enter the necessary requests to add an office to the list.</p>
+    <p>Enter the necessary requests to add the office.</p>
 </div>
 
 <form asp-controller="Office" asp-action="SaveOffice">
-
     <label asp-for="PictureURL"></label>
     <input class="form-control" asp-for="PictureURL" />
 
@@ -20,6 +19,7 @@
 
     <label asp-for="Number"></label>
     <input class="form-control" asp-for="Number" />
+
 
     <br />
     <button class="btn btn-primary">Add office</button>

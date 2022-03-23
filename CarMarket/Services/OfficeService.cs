@@ -14,24 +14,10 @@ namespace CarMarket.Services
             this.db = db;
         }
 
-        public Office GetById(int id)
+        public void AddOffice(Office officetoAdd)
         {
-            return this.db.Offices.FirstOrDefault(x => x.Id == id);
-        }
-
-        public void AddOffice(Office officeToAdd)
-        {
-            db.Offices.Add(officeToAdd);
+            db.Offices.Add(officetoAdd);
             db.SaveChanges();
-        }
-
-        public void EditOffice(Office officeToEdit)
-        {
-            var editedOffice = this.GetById(officeToEdit.Id);
-
-            editedOffice.PictureURL = officeToEdit.PictureURL;
-            editedOffice.Name = officeToEdit.Name;
-            editedOffice.Location = officeToEdit.Location;
         }
 
         public void DeleteOffice(int id)
@@ -41,10 +27,27 @@ namespace CarMarket.Services
             db.SaveChanges();
         }
 
-        public List<Office> GetOffice()
+        public void EditOffice(Office officetoEdit)
+        {
+            var office = this.GetById(officetoEdit.Id);
+
+            office.PictureURL = officetoEdit.PictureURL;
+            office.Name = officetoEdit.Name;
+            office.Location = officetoEdit.Location;
+            office.Manager = officetoEdit.Manager;
+            office.Number = officetoEdit.Number;
+
+            db.SaveChanges();
+        }
+
+        public List<Office> GetOffices()
         {
             return db.Offices.ToList();
         }
 
+        public Office GetById(int id)
+        {
+            return this.db.Offices.FirstOrDefault(x => x.Id == id);
+        }
     }
 }

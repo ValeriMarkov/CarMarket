@@ -9,7 +9,7 @@ namespace CarMarket.Services
 
         List<Car> GetCar();
 
-        void EditCar(Car car);
+        void EditCar(Car carToEdit);
 
         void DeleteCar(int id);
         Car GetById(int id);
