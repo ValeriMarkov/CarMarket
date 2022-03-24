@@ -1,49 +1,55 @@
 ﻿@model Office
 
-<form asp-controller="Office" asp-action="EditOffice">
-    <input asp-for="Id" hidden />
+    <div class="row text">
+        <div class="col-md-8 offset-2">
 
-    <label asp-for="PictureURL"></label>
-    <input class="form-control" asp-for="PictureURL" />
+            <form asp-controller="Office" asp-action="EditOffice">
+                <input asp-for="Id" hidden />
 
-    <label asp-for="Name"></label>
-    <input class="form-control" asp-for="Name" />
+                <label asp-for="PictureURL"></label>
+                <input class="form-control" asp-for="PictureURL" />
 
-    <label asp-for="Location"></label>
-    <input class="form-control" asp-for="Location" />
+                <label asp-for="Name"></label>
+                <input class="form-control" asp-for="Name" />
 
-    <label asp-for="Manager"></label>
-    <input class="form-control" asp-for="Manager" />
+                <label asp-for="Location"></label>
+                <input class="form-control" asp-for="Location" />
 
-    <label asp-for="Number"></label>
-    <input class="form-control" asp-for="Number" />
+                <label asp-for="Manager"></label>
+                <input class="form-control" asp-for="Manager" />
 
-    <br />
-    <button class="btn btn-primary">Edit office</button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Delete office</button>
-</form>
+                <label asp-for="Number"></label>
+                <input class="form-control" asp-for="Number" />
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete office? This cannot be returned!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button onclick="deleteOffice()" type="button" class="btn btn-danger">Delete</button>
+                <br />
+                <button class="btn btn-primary">Edit office</button>
+                <button type="button" class="btn btn-danger text-white" data-toggle="modal" data-target="#exampleModal">Delete office</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete office? This cannot be returned!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button onclick="deleteOffice()" type="button" class="btn btn-danger">Delete</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<script>
+    <script>
     const deleteOffice = () => {
         window.location = `/Office/DeleteOffice/${@Model.Id}`
     }
-</script>
+    </script>

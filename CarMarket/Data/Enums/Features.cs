@@ -1,8 +1,8 @@
-﻿namespace CarMarket.Data.Enums
+﻿namespace CarMarket.Data
 {
     public enum Features
     {
-        Airbags = 1,
+        Airbags,
         BackAirBags,
         DualAirBags,
         ABS,

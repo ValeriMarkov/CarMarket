@@ -76,7 +76,7 @@ body {
 
 @-webkit-keyframes glow {
     from {
-        text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 5px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF;
+        text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF;
     }
 }
 

@@ -7,14 +7,14 @@
 <div class="row">
     <div class="col-md-8 offset-2">
 
-        <form asp-controller="Cars" asp-action="SaveCar">
+        <form asp-controller="Car" asp-action="SaveCar">
             <input asp-for="Id" hidden />
 
             <label asp-for="Picture"></label>
             <input class="form-control" asp-for="Picture" />
 
             <label asp-for="Brand"></label>
-            <input class="form-control" asp-for="Brand" />
+            <select class="form-control" asp-for="Brand" asp-items="Html.GetEnumSelectList<Brand>()"></select>
 
             <label asp-for="Model"></label>
             <input class="form-control" asp-for="Model" />
@@ -32,7 +32,7 @@
             <input class="form-control" asp-for="TotalMileage" />
 
             <label asp-for="Features"></label>
-            <input class="form-control" asp-for="Features" />
+            <select class="form-control" asp-for="Features" asp-items="Html.GetEnumSelectList<Features>()" multiple></select>
 
             <label asp-for="SalePrice"></label>
             <input class="form-control" asp-for="SalePrice" />

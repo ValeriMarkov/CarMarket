@@ -1,5 +1,4 @@
 ﻿using CarMarket.Data;
-using CarMarket.Data.Enums;
 using System;
 using System.ComponentModel.DataAnnotations;
 

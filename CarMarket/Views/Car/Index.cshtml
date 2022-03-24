@@ -1,13 +1,13 @@
 ﻿@model List<Car>
 
+@foreach (var car in Model)
+{
+    <form class="form-inline my-2 my-lg-0" style="position: fixed; right: 60%; top: 1%;">
+        <input name="=" searchString" type="text" class="form-control" placeholder="Search for a car..." />
+        <button id="seatch-text" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+    </form>
 
-@{
-    ViewData["Title"] = "List of Cars";
-}
-
-<div class="row">
-    @foreach (var car in Model)
-    {
+    <div class="row">
         <div class="col-md-4 col-xs-6 border-primary mb-3">
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
@@ -15,21 +15,17 @@
                         <div class="card-header text-white bg-info">
                             <p class="card-text">
                                 <h5 class="card-title">
-                                    <p onclick="editCar('@car.Id')">@car.Brand</p>
-                                    @car.Model
-                                    <a class="text-white float-right" asp-controller="Cars" asp-action="EditCar" asp-route-id="@car.Id"><i class="bi bi-pencil-square"></i></a>
-
-                                    }
+                                    @car.Brand @car.Model
+                                    <a class="text-white float-right" onclick="getCar('@car.Id')"><i class="bi bi-pencil-square"></i></a>
                                 </h5>
                             </p>
                         </div>`
                     </div>
                     <div class="col-md-6">
-                        <img src="@car.Picture" width="100%" height="100%" style="object-fit " alt="@car.Picture">
+                        <img src="@car.Picture" width="110%" height="100%" alt="@car.Picture">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text"><b>Model: </b>@car.Model</p>
                             <p class="card-text"><b>Engine: </b>@car.Engine</p>
                             <p class="card-text"><b>Manufacture Date: </b>@car.ManufactureDate</p>
                             <p class="card-text"><b>Total mileage: </b>@car.TotalMileage</p>
@@ -37,7 +33,6 @@
                                 <b>Status: </b>
                                 <span class="badge bg-success text-white">AVAILABLE</span>
                             </p>
-
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -55,13 +50,17 @@
                 </div>
             </div>
         </div>
-    }
+    </div>
+}
+
+<div style="position: fixed; right: 50%; top: 1%;" class="text-white">
+    <a asp-controller="Car" asp-action="AddCar" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> Add New Car
+    </a>
 </div>
 
-@await Html.PartialAsync("_CreateItem", "Cars")
-
 <script>
-    const editCar = (id) => {
-        window.location = `/Cars/EditCar/${id}`
+    const getCar = (id) => {
+        window.location = `/Car/GetCar/${id}`
     }
 </script>

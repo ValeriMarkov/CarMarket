@@ -7,9 +7,9 @@ namespace CarMarket.Services
     {
         void AddCar(Car carToAdd);
 
-        List<Car> GetCar();
+        List<Car> GetCars();
 
-        void EditCar(Car carToEdit);
+        void EditCar(Car car);
 
         void DeleteCar(int id);
         Car GetById(int id);

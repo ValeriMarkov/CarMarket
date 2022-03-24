@@ -24,15 +24,10 @@
                         <p class="card-text">@Model.ManufactureDate</p>
                         <p class="card-text">
                             <b>Engine: </b>
-                            <a asp-controller="Cars" asp-action="Details" asp-route-id="@Model.Engine">
-                                @Model.Engine
-                            </a>
+                            <a> @Model.Engine</a>
                         </p>
                         <p class="card-text">
-                            <b>Horse Power: </b>
-                            <a asp-controller="Cars" asp-action="Details" asp-route-id="@Model.HorsePower">
-                                @Model.HorsePower
-                            </a>
+                            <b>Horse Power: </b> <a>@Model.HorsePower</a>
                         </p>
                         <p class="card-text"><b>Total Mileage: </b>@Model.TotalMileage</p>
                         <p class="card-text ">

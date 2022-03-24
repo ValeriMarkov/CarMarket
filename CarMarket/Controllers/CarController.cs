@@ -4,19 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarMarket.Controllers
 {
-    public class CarsController : Controller
+    public class CarController : Controller
     {
-
         private readonly ICarService carService;
 
-        public CarsController(ICarService carService)
+        public CarController(ICarService carService)
         {
             this.carService = carService;
         }
 
         public IActionResult Index()
         {
-            return View(this.carService.GetCar());
+            return View(this.carService.GetCars());
         }
 
         public IActionResult GetCar(int id)
@@ -57,6 +56,5 @@ namespace CarMarket.Controllers
             if (carDetails == null) return View("Empty");
                 return View("Details");
         }
-
     }
 }

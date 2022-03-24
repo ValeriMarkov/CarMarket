@@ -13,31 +13,31 @@ namespace CarMarket.Services
         {
             this.db = db;
         }
+        public void AddCar(Car cartoAdd)
+        {
+            db.Cars.Add(cartoAdd);
+            db.SaveChanges();
+        }
 
         public Car GetById(int id)
         {
             return this.db.Cars.FirstOrDefault(x => x.Id == id);
         }
 
-        public void AddCar(Car carToAdd)
-        {
-            db.Cars.Add(carToAdd);
-            db.SaveChanges();
-        }
 
-        public void EditCar(Car carToEdit)
+        public void EditCar(Car cartoEdit)
         {
-            var editedCar = this.GetById(carToEdit.Id);
+            var editedCar = this.GetById(cartoEdit.Id);
 
-            editedCar.Picture = carToEdit.Picture;
-            editedCar.Brand = carToEdit.Brand;
-            editedCar.Model = carToEdit.Model;
-            editedCar.Engine = carToEdit.Engine;
-            editedCar.HorsePower = carToEdit.HorsePower;
-            editedCar.ManufactureDate = carToEdit.ManufactureDate;
-            editedCar.TotalMileage = carToEdit.TotalMileage;
-            editedCar.Features = carToEdit.Features;
-            editedCar.SalePrice = carToEdit.SalePrice;
+            editedCar.Picture = cartoEdit.Picture;
+            editedCar.Brand = cartoEdit.Brand;
+            editedCar.Model = cartoEdit.Model;
+            editedCar.Engine = cartoEdit.Engine;
+            editedCar.HorsePower = cartoEdit.HorsePower;
+            editedCar.ManufactureDate = cartoEdit.ManufactureDate;
+            editedCar.TotalMileage = cartoEdit.TotalMileage;
+            editedCar.Features = cartoEdit.Features;
+            editedCar.SalePrice = cartoEdit.SalePrice;
 
             db.SaveChanges();
         }
@@ -49,7 +49,7 @@ namespace CarMarket.Services
             db.SaveChanges();
         }
 
-        public List<Car> GetCar()
+        public List<Car> GetCars()
         {
             return db.Cars.ToList();
         }
