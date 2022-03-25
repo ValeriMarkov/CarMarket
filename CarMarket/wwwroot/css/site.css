@@ -76,7 +76,7 @@ body {
 
 @-webkit-keyframes glow {
     from {
-        text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF, 0 0 1px #1F51FF;
+        text-shadow: 0 0 1px #32CD32, 0 0 1px #32CD32, 0 0 2px #32CD32, 0 0 1px #32CD32, 0 0 1px #32CD32, 0 0 1px #32CD32, 0 0 1px #32CD32;
     }
 }
 
@@ -85,4 +85,35 @@ body {
     background-image: url('/Images/background.png') !important;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#carIndex {
+    background: linear-gradient(to bottom, rgba(28, 91, 170, 0.7), rgba(103, 163, 199, 0.7));
+}
+
+#welcome {
+    position: absolute;
+    top: 20%;
+    float: right;
+    right: 34%;
+}
+
+#welcome h1{
+    font-size: 100px;
+    color: #4682B4;
+    text-shadow: 0 0 10px #000000;
+}
+
+#welcome p{
+    color: #fff;
+    font-size: 25px;
+    text-shadow: 0 0 10px #000000;
+}
+
+#indexOffice td{
+    width: 20vh;
+}
+
+#indexOffice img{
+    max-width: 160px;
 }

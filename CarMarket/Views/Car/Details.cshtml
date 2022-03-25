@@ -1,60 +1,57 @@
 ﻿@model Car
 
 @{ ViewData["Title"] = "Car details"; }
-
-<div class="row">
-    <div class="col-md-8 offset-2">
-        <div class="card mb-12">
-            <div class="row g-0">
-                <div class="col-md-12">
-                    <div class="card-header text-white bg-info">
-                        <p class="card-text">
-                            <h5 class="card-title">
-                                @Model.Brand
-                                @Model.Model
-                            </h5>
-                        </p>
+<body id="carIndex">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card mb-12">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Model.Brand
+                                    @Model.Model
+                                </h5>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <br /><img src="@Model.Picture" width="110%" height="80%" alt="@Model.Brand">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-text">@Model.ManufactureDate</p>
-                        <p class="card-text">
-                            <b>Engine: </b>
-                            <a> @Model.Engine</a>
-                        </p>
-                        <p class="card-text">
-                            <b>Horse Power: </b> <a>@Model.HorsePower</a>
-                        </p>
-                        <p class="card-text"><b>Total Mileage: </b>@Model.TotalMileage</p>
-                        <p class="card-text ">
-                            <b>Status: </b>
-                            <span class="badge bg-success text-white">AVAILABLE</span>
-                        </p>
-                        <p class="card-text">
-                            <b>Features: </b>
-                            <hr />
-                            <div class="row">
-                              
-                    <div class="column text-center">
-                       
-                       @*FEATURES TODO*@
-
+                    <div class="col-md-4">
+                        <br /><img src="@Model.Picture" width="110%" height="80%" alt="@Model.Brand">
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card-footer">
-                        <p class="card-text">
-                            <a class="btn btn-outline-primary float-right" asp-action="Index">Back to List</a>
-                            <a class="btn btn-success text-white"
-                               asp-controller="Orders">Price: @Model.SalePrice.ToString("c"))</a>
-                        </p>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <p class="card-text">
+                                <b>Manufacture Date:</b>
+                                <a>@Model.ManufactureDate</a>
+                            </p>
+                            <p class="card-text">
+                                <b>Engine capacity: </b>
+                                <a> @Model.Engine cc</a>
+                            </p>
+                            <p class="card-text">
+                                <b>Power: </b> <a>@Model.HorsePower <i>hp</i></a>
+                            </p>
+                            <p class="card-text"><b>Total Mileage: </b>@Model.TotalMileage km</p>
+                            <p class="card-text ">
+                                <b>Status: </b>
+                                <span class="badge bg-success text-white">AVAILABLE</span>
+                            </p>
+                            <p class="card-text">
+                                <b>Features: </b> <a>@Model.Features</a><hr />
+                                <div class="col-md-12">
+                                    <div class="card-footer">
+                                        <p class="card-text">
+                                            <a class="btn btn-outline-primary float-right" asp-action="Index">Back to List</a>
+                                            <a class="btn btn-success text-white"
+                                               asp-controller="Orders">Price: @Model.SalePrice.ToString("c")</a>
+                                        </p>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>

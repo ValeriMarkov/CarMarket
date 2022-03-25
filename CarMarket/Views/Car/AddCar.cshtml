@@ -3,43 +3,42 @@
 @{
     ViewData["Title"] = "Add a new car";
 }
+<body id="carIndex">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <form asp-controller="Car" asp-action="SaveCar">
+                <input asp-for="Id" hidden />
 
-<div class="row">
-    <div class="col-md-8 offset-2">
+                <label asp-for="Picture"></label>
+                <input class="form-control" asp-for="Picture" />
 
-        <form asp-controller="Car" asp-action="SaveCar">
-            <input asp-for="Id" hidden />
+                <label asp-for="Brand"></label>
+                <select class="form-control" asp-for="Brand" asp-items="Html.GetEnumSelectList<Brand>()"></select>
 
-            <label asp-for="Picture"></label>
-            <input class="form-control" asp-for="Picture" />
+                <label asp-for="Model"></label>
+                <input class="form-control" asp-for="Model" />
 
-            <label asp-for="Brand"></label>
-            <select class="form-control" asp-for="Brand" asp-items="Html.GetEnumSelectList<Brand>()"></select>
+                <label asp-for="Engine"></label>
+                <input class="form-control" asp-for="Engine" />
 
-            <label asp-for="Model"></label>
-            <input class="form-control" asp-for="Model" />
+                <label asp-for="HorsePower"></label>
+                <input class="form-control" asp-for="HorsePower" />
 
-            <label asp-for="Engine"></label>
-            <input class="form-control" asp-for="Engine" />
+                <label asp-for="ManufactureDate"></label>
+                <input class="form-control" asp-for="ManufactureDate" />
 
-            <label asp-for="HorsePower"></label>
-            <input class="form-control" asp-for="HorsePower" />
+                <label asp-for="TotalMileage"></label>
+                <input class="form-control" asp-for="TotalMileage" />
 
-            <label asp-for="ManufactureDate"></label>
-            <input class="form-control" asp-for="ManufactureDate" />
+                <label asp-for="Features"></label>
+                <select class="form-control" asp-for="Features" asp-items="Html.GetEnumSelectList<Features>()" multiple></select>
 
-            <label asp-for="TotalMileage"></label>
-            <input class="form-control" asp-for="TotalMileage" />
+                <label asp-for="SalePrice"></label>
+                <input class="form-control" asp-for="SalePrice" /> <br />
 
-            <label asp-for="Features"></label>
-            <select class="form-control" asp-for="Features" asp-items="Html.GetEnumSelectList<Features>()" multiple></select>
-
-            <label asp-for="SalePrice"></label>
-            <input class="form-control" asp-for="SalePrice" />
-
-            <br />
-            <button class="btn btn-primary">Add car</button>
-        </form>
-
+                <button class="btn btn-primary">Add car</button>
+                <button class="btn btn-primary float-right" asp-action="Index">Back to List</button>
+            </form>
+        </div>
     </div>
-</div>
+</body>

@@ -1,7 +1,7 @@
 ﻿@model Car
-
-<div class="row text">
-    <div class="col-md-8 offset-2">
+<body id="carIndex">
+<div class="row">
+    <div class="col-md-6 offset-3">
 
         <form asp-controller="Car" asp-action="EditCar">
             <input asp-for="Id" hidden />
@@ -31,34 +31,16 @@
             <select class="form-control" asp-for="Features" asp-items="Html.GetEnumSelectList<Features>()" multiple></select>
 
             <label asp-for="SalePrice"></label>
-            <input class="form-control" asp-for="SalePrice" />
+            <input class="form-control" asp-for="SalePrice" /><br />
 
-            <br />
             <button class="btn btn-primary">Edit car</button>
-            <button type="button" class="btn btn-danger text-white" data-toggle="modal" data-target="#exampleModal">Delete car</button>
+            <button type="button" class="btn btn-danger text-white" onclick="deleteCar()">Delete car</button>
+            <button class="btn btn-primary float-right" asp-action="Index">Back to List</button>
         </form>
 
     </div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete car? This cannot be returned!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button onclick="deleteCar()" type="button" class="btn btn-danger">Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+</body>
 
 <script>
     const deleteCar = () => {
