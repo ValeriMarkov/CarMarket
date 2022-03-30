@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CarMarket.Migrations
 {
-    public partial class CarMarketNew : Migration
+    public partial class CarMarket1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,11 +17,15 @@ namespace CarMarket.Migrations
                     Brand = table.Column<int>(nullable: false),
                     Model = table.Column<string>(nullable: true),
                     Engine = table.Column<double>(nullable: false),
+                    Transmission = table.Column<int>(nullable: false),
+                    Fuel = table.Column<int>(nullable: false),
                     HorsePower = table.Column<int>(nullable: false),
                     ManufactureDate = table.Column<DateTime>(nullable: true),
                     TotalMileage = table.Column<int>(nullable: false),
-                    SalePrice = table.Column<double>(nullable: false),
-                    Features = table.Column<int>(nullable: false)
+                    Doors = table.Column<int>(nullable: false),
+                    SteeringWheel = table.Column<int>(nullable: false),
+                    Color = table.Column<int>(nullable: false),
+                    SalePrice = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -38,7 +42,8 @@ namespace CarMarket.Migrations
                     Name = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true),
                     Manager = table.Column<string>(nullable: true),
-                    Number = table.Column<int>(nullable: false)
+                    Number = table.Column<int>(nullable: false),
+                    Email = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -36,7 +36,6 @@ namespace CarMarket.Services
             editedCar.HorsePower = cartoEdit.HorsePower;
             editedCar.ManufactureDate = cartoEdit.ManufactureDate;
             editedCar.TotalMileage = cartoEdit.TotalMileage;
-            editedCar.Features = cartoEdit.Features;
             editedCar.SalePrice = cartoEdit.SalePrice;
 
             db.SaveChanges();

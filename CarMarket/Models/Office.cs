@@ -14,7 +14,9 @@ namespace CarMarket.Models
         public string Location { get; set; }
         [Display(Name = "Manager")]
         public string Manager { get; set; }
-        [Display(Name = "Number")]
+        [Display(Name = "Phone Number")]
         public int Number { get; set; }
+        [Display(Name = "E-Mail")]
+        public string Email { get; set; }
     }
 }

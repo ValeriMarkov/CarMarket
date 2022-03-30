@@ -18,8 +18,14 @@
             <label asp-for="Engine"></label>
             <input class="form-control" asp-for="Engine" />
 
+            <label asp-for="Fuel"></label>
+            <select class="form-control" asp-for="Fuel" asp-items="Html.GetEnumSelectList<Fuel>()"></select>
+
             <label asp-for="HorsePower"></label>
             <input class="form-control" asp-for="HorsePower" />
+
+            <label asp-for="Transmission"></label>
+            <select class="form-control" asp-for="Transmission" asp-items="Html.GetEnumSelectList<Transmission>()"></select>
 
             <label asp-for="ManufactureDate"></label>
             <input class="form-control" asp-for="ManufactureDate" />
@@ -27,11 +33,17 @@
             <label asp-for="TotalMileage"></label>
             <input class="form-control" asp-for="TotalMileage" />
 
-            <label asp-for="Features"></label>
-            <select class="form-control" asp-for="Features" asp-items="Html.GetEnumSelectList<Features>()" multiple></select>
+            <label asp-for="Doors"></label>
+            <select class="form-control" asp-for="Doors" asp-items="Html.GetEnumSelectList<Doors>()"></select>
+
+            <label asp-for="SteeringWheel"></label>
+            <select class="form-control" asp-for="SteeringWheel" asp-items="Html.GetEnumSelectList<SteeringWheel>()"></select>
+
+            <label asp-for="Color"></label>
+            <select class="form-control" asp-for="Color" asp-items="Html.GetEnumSelectList<Color>()"></select>
 
             <label asp-for="SalePrice"></label>
-            <input class="form-control" asp-for="SalePrice" /><br />
+            <input class="form-control" asp-for="SalePrice" /> <br />
 
             <button class="btn btn-primary">Edit car</button>
             <button type="button" class="btn btn-danger text-white" onclick="deleteCar()">Delete car</button>

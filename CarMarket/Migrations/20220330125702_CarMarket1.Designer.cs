@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarMarket.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220322141949_CarMarketNew")]
-    partial class CarMarketNew
+    [Migration("20220330125702_CarMarket1")]
+    partial class CarMarket1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,10 +31,16 @@ namespace CarMarket.Migrations
                     b.Property<int>("Brand")
                         .HasColumnType("int");
 
+                    b.Property<int>("Color")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Doors")
+                        .HasColumnType("int");
+
                     b.Property<double>("Engine")
                         .HasColumnType("float");
 
-                    b.Property<int>("Features")
+                    b.Property<int>("Fuel")
                         .HasColumnType("int");
 
                     b.Property<int>("HorsePower")
@@ -52,7 +58,13 @@ namespace CarMarket.Migrations
                     b.Property<double>("SalePrice")
                         .HasColumnType("float");
 
+                    b.Property<int>("SteeringWheel")
+                        .HasColumnType("int");
+
                     b.Property<int>("TotalMileage")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Transmission")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -66,6 +78,9 @@ namespace CarMarket.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");

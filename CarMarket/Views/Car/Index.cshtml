@@ -4,7 +4,7 @@
 @foreach (var car in Model)
 {
     <form class="form-inline my-2 my-lg-0" style="position: fixed; right: 60%; top: 1%;">
-        <input name="=" searchString" type="text" class="form-control" placeholder="Search for a ..." />
+        <input name="=" searchString" type="text" class="form-control" placeholder="Search for a car']{}'..." />
         <button id="search-text" class="btn btn-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
     </form>
 
@@ -22,17 +22,15 @@
                         </div>`
                     </div>
                     <div class="col-md-6">
-                        <img src="@car.Picture" width="110%" height="100%" alt="@car.Picture">
+                        <img src="@car.Picture" width="115%" height="100%" alt="@car.Picture">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text"><b>Engine: </b>@car.Engine</p>
-                            <p class="card-text"><b>Manufacture Date: </b>@car.ManufactureDate</p>
-                            <p class="card-text"><b>Total mileage: </b>@car.TotalMileage</p>
-                            <p class="card-text ">
-                                <b>Status: </b>
-                                <span class="badge bg-success text-white">AVAILABLE</span>
-                            </p>
+                            <p class="card-text"><b>Engine: </b>@car.Engine <i>cc</i></p>
+                            <p class="card-text"><b>Fuel: </b>@car.Fuel</p>
+                            <p class="card-text"><b>Horse Power: </b>@car.HorsePower <i>hp</i></p>
+                            <p class="card-text"><b>Manufacture Date: </b>@car.ManufactureDate.ToShortDateString()</p>
+                            <p class="card-text "><b>Status: </b><span class="badge bg-success text-white">AVAILABLE</span></p>
                         </div>
                     </div>
                     <div class="col-md-12">

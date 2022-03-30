@@ -16,17 +16,25 @@ namespace CarMarket.Models
         public string Model { get; set; }
         [Display(Name = "Engine")]
         public double Engine { get; set; }
+        [Display(Name = "Transmission")]
+        public Transmission Transmission { get; set; }
+        [Display(Name = "Fuel")]
+        public Fuel Fuel { get; set; }
         [Display(Name = "Horse Power")]
         public int HorsePower { get; set; }
         [Display(Name = "Manufacture Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime? ManufactureDate { get; set; }
+        public DateTime ManufactureDate { get; set; }
         [Display(Name = "Total Mileage")]
         public int TotalMileage { get; set; }
+        [Display(Name = "Doors")]
+        public Doors Doors { get; set; }
+        [Display(Name = "Steering Wheel")]
+        public SteeringWheel SteeringWheel { get; set; }
+        [Display(Name = "Color")]
+        public Color Color { get; set; }
         [Display(Name = "Sale Price")]
         public double SalePrice { get; set; }
-        [Display(Name = "Features")]
-        public Features Features { get; set; }
     }
 }
