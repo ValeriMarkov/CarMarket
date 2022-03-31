@@ -7,43 +7,43 @@
             <input asp-for="Id" hidden />
 
             <label asp-for="Picture"></label>
-            <input class="form-control" asp-for="Picture" />
+            <input class="form-control" asp-for="Picture" required />
 
             <label asp-for="Brand"></label>
-            <select class="form-control" asp-for="Brand" asp-items="Html.GetEnumSelectList<Brand>()"></select>
+            <select class="form-control" asp-for="Brand" asp-items="Html.GetEnumSelectList<Brand>()" required></select>
 
             <label asp-for="Model"></label>
-            <input class="form-control" asp-for="Model" />
+            <input class="form-control" asp-for="Model" required />
 
             <label asp-for="Engine"></label>
-            <input class="form-control" asp-for="Engine" />
+            <input class="form-control" asp-for="Engine" required />
 
             <label asp-for="Fuel"></label>
-            <select class="form-control" asp-for="Fuel" asp-items="Html.GetEnumSelectList<Fuel>()"></select>
+            <select class="form-control" asp-for="Fuel" asp-items="Html.GetEnumSelectList<Fuel>()" required></select>
 
             <label asp-for="HorsePower"></label>
-            <input class="form-control" asp-for="HorsePower" />
+            <input class="form-control" asp-for="HorsePower" required />
 
             <label asp-for="Transmission"></label>
-            <select class="form-control" asp-for="Transmission" asp-items="Html.GetEnumSelectList<Transmission>()"></select>
+            <select class="form-control" asp-for="Transmission" asp-items="Html.GetEnumSelectList<Transmission>()" required></select>
 
             <label asp-for="ManufactureDate"></label>
-            <input class="form-control" asp-for="ManufactureDate" />
+            <input class="form-control" asp-for="ManufactureDate" required />
 
             <label asp-for="TotalMileage"></label>
-            <input class="form-control" asp-for="TotalMileage" />
+            <input class="form-control" asp-for="TotalMileage" required />
 
             <label asp-for="Doors"></label>
-            <select class="form-control" asp-for="Doors" asp-items="Html.GetEnumSelectList<Doors>()"></select>
+            <select class="form-control" asp-for="Doors" asp-items="Html.GetEnumSelectList<Doors>()" required></select>
 
             <label asp-for="SteeringWheel"></label>
-            <select class="form-control" asp-for="SteeringWheel" asp-items="Html.GetEnumSelectList<SteeringWheel>()"></select>
+            <select class="form-control" asp-for="SteeringWheel" asp-items="Html.GetEnumSelectList<SteeringWheel>()" required></select>
 
             <label asp-for="Color"></label>
-            <select class="form-control" asp-for="Color" asp-items="Html.GetEnumSelectList<Color>()"></select>
+            <select class="form-control" asp-for="Color" asp-items="Html.GetEnumSelectList<Color>()" required></select>
 
             <label asp-for="SalePrice"></label>
-            <input class="form-control" asp-for="SalePrice" /> <br />
+            <input class="form-control" asp-for="SalePrice" required /> <br />
 
             <button class="btn btn-primary">Edit car</button>
             <button type="button" class="btn btn-danger text-white" onclick="deleteCar()">Delete car</button>

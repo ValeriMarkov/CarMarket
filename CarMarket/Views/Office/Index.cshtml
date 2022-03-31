@@ -12,6 +12,7 @@
                                 <th>Location</th>
                                 <th>Manager</th>
                                 <th>Number</th>
+                                <th>E-Mail</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -19,7 +20,7 @@
                         <tbody id="indexOffice">
                             <tr>
                                 <td class="align-middle">
-                                    <img class="rounded-circle" src="@office.PictureURL"/>
+                                    <img class="rounded-circle" src="@office.PictureURL" />
                                 </td>
                                 <td class="align-middle">
                                     @office.Name
@@ -34,7 +35,10 @@
                                     @office.Number
                                 </td>
                                 <td class="align-middle">
-                                    <div class="btn btn-outline-primary text-white" onclick="getOffice('@office.Id')"><i class="bi bi-pencil-square">Edit</i></div> |
+                                    @office.Email
+                                </td>
+                                <td class="align-middle">
+                                    <div class="btn btn-outline-primary text-white" onclick="getOffice('@office.Id')"><i class="bi bi-pencil-square">Edit</i></div>
                                     <div class="btn btn-danger text-white" onclick="deleteOffice('@office.Id')"><i class="bi" bi-trash></i>Delete</div>
                                 </td>
                             </tr>

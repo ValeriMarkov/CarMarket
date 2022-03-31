@@ -6,19 +6,22 @@
                     <input asp-for="Id" hidden />
 
                     <label asp-for="PictureURL"></label>
-                    <input class="form-control" asp-for="PictureURL" />
+                    <input class="form-control" asp-for="PictureURL" required/>
 
                     <label asp-for="Name"></label>
-                    <input class="form-control" asp-for="Name" />
+                    <input class="form-control" asp-for="Name" required/>
 
                     <label asp-for="Location"></label>
-                    <input class="form-control" asp-for="Location" />
+                    <input class="form-control" asp-for="Location" required/>
 
                     <label asp-for="Manager"></label>
-                    <input class="form-control" asp-for="Manager" />
+                    <input class="form-control" asp-for="Manager" required/>
 
                     <label asp-for="Number"></label>
-                    <input class="form-control" asp-for="Number" /><br />
+                    <input class="form-control" asp-for="Number" required/><br />
+
+                    <label asp-for="Email"></label>
+                    <input class="form-control" asp-for="Email" required/><br />
 
                     <button class="btn btn-primary text-white">Edit office</button>
                     <button onclick="deleteOffice()" type="button" class="btn btn-danger text-white">Delete office</button>

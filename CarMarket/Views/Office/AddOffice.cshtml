@@ -9,19 +9,22 @@
         <div class="col-md-6 offset-3">
             <form asp-controller="Office" asp-action="SaveOffice">
                 <label asp-for="PictureURL"></label>
-                <input class="form-control" asp-for="PictureURL" />
+                <input class="form-control" asp-for="PictureURL" required/>
 
                 <label asp-for="Name"></label>
-                <input class="form-control" asp-for="Name" />
+                <input class="form-control" asp-for="Name" required/>
 
                 <label asp-for="Location"></label>
-                <input class="form-control" asp-for="Location" />
+                <input class="form-control" asp-for="Location" required/>
 
                 <label asp-for="Manager"></label>
-                <input class="form-control" asp-for="Manager" />
+                <input class="form-control" asp-for="Manager" required/>
 
                 <label asp-for="Number"></label>
-                <input class="form-control" asp-for="Number" />
+                <input class="form-control" asp-for="Number" required/>
+
+                <label asp-for="Email"></label>
+                <input class="form-control" asp-for="Email" required/><br />
 
                 <button class="btn btn-primary">Add office</button>
             </form>

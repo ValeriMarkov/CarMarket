@@ -54,6 +54,7 @@
         Smart,
         Subaru,
         Suzuki,
+        Seat,
         Tesla,
         Toyota,
         Volkswagen,

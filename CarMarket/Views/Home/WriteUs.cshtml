@@ -1,20 +1,19 @@
 ﻿@page
 <body id="carIndex">
         <div class="container">
-            <div class="row">
                 <div class="d-flex justify-content-center">
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    <div class="col-2">Username</div>
-                    <div class="col-4"><input type="text" id="userInput" /></div>
+                    <div style="position: absolute; right: 60%; bottom: 15%;">Username</div>
+                    <div style="position: absolute; right: 56%; bottom: 10%;"><input type="text" id="userInput" /></div>
                 </div>
                 <div class="row">
-                    <div class="col-2">Message</div>
-                    <div class="col-4"><input type="text" id="messageInput" /></div>
+                    <div style="position: absolute; right: 40%; bottom: 15%;"">Message</div>
+                    <div style="position: absolute; right: 36%; bottom: 10%;"><input type="text" id="messageInput" /></div>
                 </div>
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    <div class="col-6">
+                    <div style="position: absolute; right: 48%; bottom: 14%;">
                         <input type="button" id="sendButton" value="Send Message" />
                     </div>
                 </div>
@@ -24,12 +23,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div>
                         <ul id="messagesList"></ul>
                     </div>
                 </div>
             </div>
-                </div>
         </div>
 
         <script src="~/js/signalr/dist/browser/signalr.js"></script>
