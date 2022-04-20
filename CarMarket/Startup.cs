@@ -2,6 +2,7 @@ using CarMarket.Data;
 using CarMarket.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,8 +26,8 @@ namespace CarMarket
             services.AddTransient<ICarService, CarService>();
             services.AddTransient<IOfficeService, OfficeService>();
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                     options.UseSqlServer(
+                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSignalR();

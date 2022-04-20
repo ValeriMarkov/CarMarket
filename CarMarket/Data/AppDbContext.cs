@@ -11,5 +11,6 @@ namespace CarMarket.Data
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Office> Offices { get; set; }
+
     }
 }
